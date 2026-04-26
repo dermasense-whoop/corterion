@@ -19,6 +19,26 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://corterion.com"),
   title: "Corterion | Certainty, Engineered",
   description: "AI-powered diagnostic systems built for precision, early detection, and scalable healthcare delivery.",
+  icons: {
+    icon: "/logo-icon.png",
+    apple: "/logo-icon.png",
+  },
+  openGraph: {
+    title: "Corterion | Certainty, Engineered",
+    description: "AI-powered diagnostic systems built for precision, early detection, and scalable healthcare delivery.",
+    url: "https://corterion.com",
+    siteName: "Corterion",
+    images: [
+      {
+        url: "/logo-source.png",
+        width: 1200,
+        height: 630,
+        alt: "Corterion - Certainty, Engineered",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
