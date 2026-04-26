@@ -40,11 +40,11 @@ export default function SkinxPage() {
               <h3 className="font-serif text-3xl text-corterion-navy mb-2">Experience SkinX™</h3>
               <p className="text-slate-600 font-medium">Book a clinical demonstration with our engineering team.</p>
             </div>
-            <Link href="/request-demo">
+            <a href="https://skin-x.corterion.com">
               <button className="px-10 py-4 bg-blue-600 text-white font-bold rounded-full hover:bg-black transition-colors shadow-xl shadow-blue-500/20 shrink-0">
-                Request Demo
+                Try for Free
               </button>
-            </Link>
+            </a>
           </div>
         </RevealText>
       </section>
