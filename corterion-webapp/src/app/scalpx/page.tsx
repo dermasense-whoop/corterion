@@ -1,127 +1,148 @@
 import { RevealText } from "@/components/animations/RevealText";
-import { RiveWrapper } from "@/components/animations/RiveWrapper";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Waves, Zap, Database } from "lucide-react";
+import Link from "next/link";
 
 export default function ScalpxPage() {
   return (
-    <div className="flex flex-col w-full">
-      {/* HERO SECTION */}
-      <section className="relative w-full min-h-[80vh] flex items-center overflow-hidden bg-corterion-navy-dark pt-20">
-        <div className="absolute inset-0 z-0 opacity-40">
-           {/* Fallback to abstract loop if ScalpX specific isn't available */}
-           {/* <RiveWrapper src="/path-to-scalpx-animation.riv" /> */}
-           <div className="absolute inset-0 bg-gradient-to-b from-corterion-navy-dark/80 via-transparent to-corterion-navy" />
+    <div className="flex flex-col w-full bg-white">
+      
+      {/* IMMERSIVE HERO SECTION */}
+      <section className="relative w-full min-h-[85vh] flex flex-col items-center justify-center overflow-hidden bg-corterion-navy-dark pt-24 pb-32">
+        <div className="absolute inset-0 z-0 opacity-80">
+           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-corterion-navy-light via-corterion-navy to-black" />
+           <div className="absolute inset-0 bg-black/40" />
         </div>
         
-        <div className="container relative z-10 mx-auto px-6">
-          <div className="max-w-3xl">
-            <RevealText>
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-6">
-                ScalpX™ <br/>
-                <span className="text-corterion-cyan font-light tracking-wide text-3xl md:text-5xl">Hair & Scalp Intelligence System</span>
-              </h1>
-            </RevealText>
-            <RevealText delay={200}>
-              <p className="text-xl text-corterion-slate/80 leading-relaxed mb-10">
-                Clinical-grade scalp diagnostics detecting thinning, follicle density, and inflammation for real-world use. Certainty in every scan.
-              </p>
-            </RevealText>
-            <RevealText delay={400}>
-              <button className="px-8 py-4 bg-corterion-cyan text-corterion-navy font-bold tracking-wide hover:bg-white transition-colors inline-flex items-center gap-2">
-                Request ScalpX Demo <ArrowRight className="w-4 h-4" />
+        <div className="container relative z-10 mx-auto px-6 text-center mt-10 max-w-4xl">
+          <RevealText>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-corterion-cyan/30 bg-corterion-cyan/10 text-corterion-cyan text-xs font-bold tracking-[0.2em] uppercase mb-8 shadow-sm">
+              Scalp Intelligence
+            </div>
+          </RevealText>
+          <RevealText delay={200}>
+            <h1 className="font-serif text-6xl md:text-8xl text-white mb-6 tracking-tight leading-none drop-shadow-2xl">
+              ScalpX™
+            </h1>
+          </RevealText>
+          <RevealText delay={400}>
+            <p className="text-xl md:text-2xl text-white/80 font-medium leading-relaxed mb-10 max-w-2xl mx-auto drop-shadow-md">
+              The first clinical-grade diagnostic system engineered specifically for high-fidelity scalp and follicle analysis.
+            </p>
+          </RevealText>
+        </div>
+      </section>
+
+      {/* OVERLAPPING CTA BAR */}
+      <section className="relative z-20 container mx-auto px-6 -mt-12">
+        <RevealText delay={600}>
+          <div className="bg-white rounded-t-2xl shadow-[0_-10px_40px_rgba(0,0,0,0.1)] border border-black/5 overflow-hidden max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between p-8 md:p-10">
+            <div className="text-center md:text-left mb-6 md:mb-0">
+              <h3 className="font-serif text-3xl text-corterion-navy mb-2">Experience ScalpX™</h3>
+              <p className="text-slate-600 font-medium">Book a clinical demonstration with our engineering team.</p>
+            </div>
+            <Link href="/request-demo">
+              <button className="px-10 py-4 bg-corterion-cyan text-corterion-navy font-bold rounded-full hover:bg-black hover:text-white transition-colors shadow-xl shadow-corterion-cyan/20 shrink-0">
+                Request Demo
               </button>
-            </RevealText>
+            </Link>
           </div>
-        </div>
+        </RevealText>
       </section>
 
-      {/* PROBLEM & SOLUTION */}
-      <section className="py-24 bg-corterion-navy relative">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-16">
-            <RevealText>
-              <div className="p-10 rounded-2xl border border-red-500/10 bg-red-500/5 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/10 blur-3xl rounded-full" />
-                <h3 className="text-sm font-bold tracking-[0.2em] text-red-400 uppercase mb-4">The Problem</h3>
-                <h4 className="text-3xl font-bold text-white mb-4">Subjective Analysis</h4>
-                <p className="text-corterion-slate/80 leading-relaxed">
-                  Traditional scalp analysis relies heavily on subjective visual inspection, leading to inconsistent diagnoses and delayed intervention for hair thinning and inflammatory conditions.
-                </p>
-              </div>
-            </RevealText>
-            
-            <RevealText delay={200}>
-              <div className="p-10 rounded-2xl border border-corterion-cyan/20 bg-corterion-cyan/5 relative overflow-hidden h-full">
-                <div className="absolute bottom-0 right-0 w-48 h-48 bg-corterion-cyan/20 blur-3xl rounded-full" />
-                <h3 className="text-sm font-bold tracking-[0.2em] text-corterion-cyan uppercase mb-4">The ScalpX Solution</h3>
-                <h4 className="text-3xl font-bold text-white mb-4">Quantifiable Precision</h4>
-                <p className="text-corterion-slate/80 leading-relaxed">
-                  ScalpX utilizes multi-spectral imaging and deep learning to quantify follicle density, gauge hair shaft thickness, and detect micro-inflammation before it becomes clinically visible.
-                </p>
-              </div>
-            </RevealText>
-          </div>
-        </div>
-      </section>
-
-      {/* FEATURES */}
-      <section className="py-24 bg-corterion-navy-dark border-t border-corterion-cyan/10">
-        <div className="container mx-auto px-6">
-          <RevealText>
-            <h2 className="text-4xl font-bold text-white text-center mb-16">Core Capabilities</h2>
-          </RevealText>
+      {/* ZIG-ZAG EDITORIAL SECTIONS */}
+      <section className="py-24 bg-white relative">
+        <div className="container mx-auto px-6 max-w-6xl flex flex-col gap-32">
           
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Density Mapping",
-                desc: "AI calculates exact follicular units per square centimeter across different scalp zones."
-              },
-              {
-                title: "Inflammation Detection",
-                desc: "Identifies erythema and perifollicular scaling that indicates underlying scalp conditions."
-              },
-              {
-                title: "Longitudinal Tracking",
-                desc: "Matches identical scalp regions over time to objectively measure treatment efficacy."
-              }
-            ].map((feature, idx) => (
-              <RevealText key={idx} delay={idx * 200}>
-                <div className="glass p-8 rounded-2xl h-full border border-corterion-cyan/10 hover:border-corterion-cyan/30 transition-colors">
-                  <h4 className="text-xl font-bold text-white mb-4">{feature.title}</h4>
-                  <p className="text-sm text-corterion-slate/70 leading-relaxed">{feature.desc}</p>
+          {/* Section 1: Density Mapping (Text Left, Image Right) */}
+          <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-24">
+            <div className="flex-1 order-2 md:order-1">
+              <RevealText>
+                <div className="w-16 h-16 rounded-2xl bg-corterion-cyan/10 border border-corterion-cyan/20 flex items-center justify-center mb-8 shadow-sm">
+                  <Waves className="w-8 h-8 text-corterion-cyan" />
                 </div>
+                <h2 className="font-serif text-4xl lg:text-5xl text-corterion-navy mb-6 leading-tight">
+                  Unprecedented Density Mapping
+                </h2>
+                <p className="text-lg text-slate-600 font-medium leading-relaxed mb-8">
+                  Quantify follicle density per square centimeter with 99.8% AI accuracy. Our multi-spectral imaging captures cellular-level detail, allowing the ScalpX neural network to isolate and count active follicles in milliseconds.
+                </p>
+                <div className="w-full h-px bg-black/10" />
               </RevealText>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* USE CASES */}
-      <section className="py-24 bg-corterion-navy">
-        <div className="container mx-auto px-6 max-w-4xl">
-          <RevealText>
-            <h2 className="text-3xl font-bold text-white mb-10">Deployment Scenarios</h2>
-          </RevealText>
-          <div className="space-y-4">
-            {[
-              { title: "Clinical Dermatology", desc: "Integrates directly into EHR systems for seamless patient intake." },
-              { title: "Specialized Hair Clinics", desc: "Provides concrete data to patients to justify treatment plans." },
-              { title: "Remote Diagnostics", desc: "Portable imaging systems enabling decentralized care delivery." }
-            ].map((useCase, idx) => (
-              <RevealText key={idx} delay={idx * 150}>
-                <div className="flex items-start gap-4 p-6 rounded-xl bg-corterion-navy-light/50 border border-corterion-cyan/5">
-                  <CheckCircle2 className="w-6 h-6 text-corterion-cyan shrink-0" />
-                  <div>
-                    <h4 className="text-lg font-bold text-white mb-1">{useCase.title}</h4>
-                    <p className="text-corterion-slate/70 text-sm">{useCase.desc}</p>
+            </div>
+            <div className="flex-1 order-1 md:order-2 w-full">
+              <RevealText delay={200}>
+                {/* Image Placeholder */}
+                <div className="w-full aspect-[4/5] rounded-3xl bg-slate-100 shadow-2xl relative overflow-hidden group">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-slate-200 to-slate-50 opacity-50" />
+                  <div className="absolute inset-0 flex items-center justify-center text-slate-400 font-serif text-xl italic group-hover:scale-105 transition-transform duration-700">
+                    [ Clinical Density Map Image ]
                   </div>
                 </div>
               </RevealText>
-            ))}
+            </div>
           </div>
+
+          {/* Section 2: Inflammation (Image Left, Text Right) */}
+          <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-24">
+            <div className="flex-1 order-1 w-full">
+              <RevealText>
+                {/* Image Placeholder */}
+                <div className="w-full aspect-[4/5] rounded-3xl bg-corterion-navy/5 shadow-2xl relative overflow-hidden group">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-corterion-cyan/10 to-transparent opacity-50" />
+                  <div className="absolute inset-0 flex items-center justify-center text-slate-400 font-serif text-xl italic group-hover:scale-105 transition-transform duration-700">
+                    [ Micro-Inflammation Scan ]
+                  </div>
+                </div>
+              </RevealText>
+            </div>
+            <div className="flex-1 order-2">
+              <RevealText delay={200}>
+                <div className="w-16 h-16 rounded-2xl bg-corterion-cyan/10 border border-corterion-cyan/20 flex items-center justify-center mb-8 shadow-sm">
+                  <Zap className="w-8 h-8 text-corterion-cyan" />
+                </div>
+                <h2 className="font-serif text-4xl lg:text-5xl text-corterion-navy mb-6 leading-tight">
+                  Detect Invisible Inflammation
+                </h2>
+                <p className="text-lg text-slate-600 font-medium leading-relaxed mb-8">
+                  Identify micro-inflammation and erythema completely invisible to the naked eye. By analyzing sub-surface vascularity, ScalpX predicts hair miniaturization before structural loss occurs.
+                </p>
+                <div className="w-full h-px bg-black/10" />
+              </RevealText>
+            </div>
+          </div>
+
+          {/* Section 3: Longitudinal (Text Left, Image Right) */}
+          <div className="flex flex-col md:flex-row items-center gap-12 lg:gap-24">
+            <div className="flex-1 order-2 md:order-1">
+              <RevealText>
+                <div className="w-16 h-16 rounded-2xl bg-corterion-cyan/10 border border-corterion-cyan/20 flex items-center justify-center mb-8 shadow-sm">
+                  <Database className="w-8 h-8 text-corterion-cyan" />
+                </div>
+                <h2 className="font-serif text-4xl lg:text-5xl text-corterion-navy mb-6 leading-tight">
+                  Absolute Treatment Tracking
+                </h2>
+                <p className="text-lg text-slate-600 font-medium leading-relaxed mb-8">
+                  Track treatment efficacy over time with exact visual and data matching. Our spatial alignment algorithms ensure that baseline and follow-up scans are compared with micrometer precision.
+                </p>
+                <div className="w-full h-px bg-black/10" />
+              </RevealText>
+            </div>
+            <div className="flex-1 order-1 md:order-2 w-full">
+              <RevealText delay={200}>
+                {/* Image Placeholder */}
+                <div className="w-full aspect-[4/5] rounded-3xl bg-slate-100 shadow-2xl relative overflow-hidden group">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-slate-200 to-slate-50 opacity-50" />
+                  <div className="absolute inset-0 flex items-center justify-center text-slate-400 font-serif text-xl italic group-hover:scale-105 transition-transform duration-700">
+                    [ Longitudinal Data Graph ]
+                  </div>
+                </div>
+              </RevealText>
+            </div>
+          </div>
+
         </div>
       </section>
+
     </div>
   );
 }
